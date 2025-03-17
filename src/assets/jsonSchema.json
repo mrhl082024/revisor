@@ -1,0 +1,206 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "CompanyDto",
+    "type": "object",
+    "properties": {
+      "companyID": {
+        "type": "integer"
+      },
+      "organisationNumber": {
+        "type": "integer"
+      },
+      "currentEmployees": {
+        "type": "integer"
+      },
+      "registeredDate": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "companyName": {
+        "type": "string"
+      },
+      "legalForm": {
+        "type": "object",
+        "properties": {
+          "legalFormId": {
+            "type": "integer"
+          },
+          "code": {
+            "type": "string"
+          }
+        },
+        "required": ["legalFormId", "code"]
+      },
+      "registeredAddress": {
+        "type": "object",
+        "properties": {
+          "registeredAddressId": {
+            "type": "integer"
+          },
+          "streetNumber": {
+            "type": "string"
+          },
+          "streetName": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "postalCode": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          }
+        },
+        "required": ["registeredAddressId", "streetNumber", "streetName", "city", "postalCode", "country"]
+      },
+      "contactInfo": {
+        "type": "object",
+        "properties": {
+          "contactInfoId": {
+            "type": "integer"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "websiteUrl": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": ["contactInfoId", "email", "phone", "websiteUrl"]
+      },
+      "taxReg": {
+        "type": "object",
+        "properties": {
+          "vatRegistered": {
+            "type": "boolean"
+          },
+          "needAudit": {
+            "type": "boolean"
+          },
+          "lastAuditYear": {
+            "type": "integer"
+          }
+        },
+        "required": ["vatRegistered", "needAudit", "lastAuditYear"]
+      },
+      "industryCode": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "industryCodeId": {
+              "type": "integer"
+            },
+            "code": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "standards": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "standardId": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "version": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "fiscData": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "fiscDataId": {
+              "type": "integer"
+            },
+            "code": {
+              "type": "string"
+            },
+            "value": {
+              "type": "number"
+            },
+            "year": {
+              "type": "integer"
+            }
+          },
+          "required": ["fiscDataId", "code", "value", "year"]
+        }
+      },
+      "ownerShareholders": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "ownerShareholderId": {
+              "type": "integer"
+            },
+            "organisationNumber": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "role": {
+              "type": "string"
+            },
+            "sharePercentage": {
+              "type": "number"
+            }
+          },
+          "required": ["ownerShareholderId", "organisationNumber", "name", "role", "sharePercentage"]
+        }
+      },
+      "boardMembers": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "boardMemberId": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "since": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": ["boardMemberId", "name", "since"]
+        }
+      }
+    },
+    "required": [
+      "companyID", 
+      "organisationNumber", 
+      "currentEmployees", 
+      "registeredDate", 
+      "companyName", 
+      "legalForm", 
+      "registeredAddress", 
+      "contactInfo", 
+      "taxReg", 
+      "fiscData", 
+      "ownerShareholders", 
+      "boardMembers"
+    ]
+  }
