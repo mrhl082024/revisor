@@ -1,10 +1,16 @@
+import genericLogo from "/images/generic-logo.png";
+
 function NavHeader() {
   return (
     <>
       <div>
-        <img src="" alt="" />
+        <img id="navheader-logo" src={genericLogo} alt="" />
       </div>
-      <div>test</div>
+      <input
+        id="company-search"
+        type="text"
+        placeholder="search for name or org.nr"
+      />
     </>
   );
 }
