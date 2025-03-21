@@ -1,7 +1,8 @@
+import NavHeader from "./NavHeader.jsx";
 function Header() {
   return (
     <>
-      <div>test</div>
+      <NavHeader />
     </>
   );
 }

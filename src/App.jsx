@@ -1,12 +1,21 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./styles/App.css";
+import allData from "./components/assets/Companies.json";
+import Header from "./components/Header.jsx";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <></>;
+  return (
+    <>
+      <BrowserRouter>
+        <header>
+          <Header allData={allData} />
+        </header>
+        <Routes>
+          <Route path="/revisor/" element={<Homepage />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 }
 
 export default App;
