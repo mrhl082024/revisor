@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./styles/App.css";
-import allData from "./components/assets/Companies.json";
 import Header from "./components/Header.jsx";
 
 function App() {
@@ -8,7 +7,7 @@ function App() {
     <>
       <BrowserRouter>
         <header>
-          <Header allData={allData} />
+          <Header />
         </header>
         <Routes>
           <Route path="/revisor/" element={<Homepage />} />
