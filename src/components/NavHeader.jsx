@@ -13,6 +13,7 @@ function NavHeader() {
           type="text"
           placeholder="search for name or org.nr"
         />
+        <button id="company-list-btn">Company List</button>
       </nav>
     </>
   );
