@@ -1,7 +1,8 @@
+import Hero from "./Hero.jsx";
 function Homepage() {
   return (
     <>
-      <div>homepage test</div>
+      <Hero />
     </>
   );
 }
