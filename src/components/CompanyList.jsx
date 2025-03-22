@@ -8,6 +8,8 @@ import companies from "../assets/Companies.json";
 
 const CompanyList = () => {
   const { company, setCompany } = useContext(Context);
+  console.log(company);
+
   const navigate = useNavigate();
   return (
     <>
@@ -16,7 +18,7 @@ const CompanyList = () => {
           <button
             key={id}
             onClick={() => {
-              setCompany(entry);
+              setCompany([entry]);
               navigate("/company");
             }}
           >

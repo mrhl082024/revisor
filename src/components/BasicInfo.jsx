@@ -7,13 +7,15 @@ const BasicInfo = () => {
 
   return (
     <>
-      {company.map((data, id) => (
-        <>
-          <h1>{data.CompanyName} </h1>
-          <p>{data.CompanyId} </p>
-          <p>{data.OrganisationNumber} </p>
-        </>
-      ))}
+      {company === null || company === undefined
+        ? null
+        : company.map((data, id) => (
+            <>
+              <h1>{data.CompanyName} </h1>
+              <p>{data.CompanyID}</p>
+              <p>{data.OrganisationNumber} </p>
+            </>
+          ))}
     </>
   );
 };
