@@ -2,16 +2,22 @@ import { useContext } from "react";
 import { Context } from "./ContextWindow.jsx";
 import companies from "../assets/Companies.json";
 import "../styles/CompanyList.css";
+import { useNavigate } from "react-router-dom";
 
 function CompanyList() {
-  const data = companies;
-  console.log(data);
-
+  const navigate = useNavigate();
   return (
     <>
       <div id="company-list">
-        {data.map((entry, id) => (
-          <button>{entry.CompanyName}</button>
+        {companies.map((entry, id) => (
+          <button
+            key={id}
+            onClick={() => {
+              navigate("/company");
+            }}
+          >
+            {entry.CompanyName}
+          </button>
         ))}
       </div>
     </>
