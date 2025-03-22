@@ -1,9 +1,12 @@
-import { createContext } from "react";
-import json from "../assets/Companies.json";
+import { createContext, useState } from "react";
 
 export const Context = createContext();
 
 export const ContextWindow = ({ children }) => {
-  const allData = json;
-  return <Context.Provider value={{ allData }}>{children}</Context.Provider>;
+  const [company, setCompany] = useState([]);
+  return (
+    <Context.Provider value={{ company, setCompany }}>
+      {children}
+    </Context.Provider>
+  );
 };

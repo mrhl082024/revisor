@@ -1,10 +1,13 @@
 import { useContext } from "react";
 import { Context } from "./ContextWindow.jsx";
-import companies from "../assets/Companies.json";
-import "../styles/CompanyList.css";
 import { useNavigate } from "react-router-dom";
 
-function CompanyList() {
+import "../styles/CompanyList.css";
+
+import companies from "../assets/Companies.json";
+
+const CompanyList = () => {
+  const { company, setCompany } = useContext(Context);
   const navigate = useNavigate();
   return (
     <>
@@ -13,6 +16,7 @@ function CompanyList() {
           <button
             key={id}
             onClick={() => {
+              setCompany(entry);
               navigate("/company");
             }}
           >
@@ -22,5 +26,5 @@ function CompanyList() {
       </div>
     </>
   );
-}
+};
 export default CompanyList;
