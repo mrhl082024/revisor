@@ -3,7 +3,7 @@ import { Context } from "./ContextWindow";
 
 function AdvancedInfo() {
   const { company, setCompany } = useContext(Context);
-  const [show, setShow] = useState(false);
+  const [showBoardMembers, setShowBoardMembers] = useState(false);
 
   console.log(company);
 
@@ -14,12 +14,12 @@ function AdvancedInfo() {
           <section>
             <button
               onClick={() => {
-                setShow((e) => !e);
+                setShowBoardMembers((e) => !e);
               }}
             >
               Show Board Members:
             </button>
-            {show ? (
+            {showBoardMembers ? (
               <ul>
                 {data.BoardMembers.map((boardmembers, id) => (
                   <div key={id}>
