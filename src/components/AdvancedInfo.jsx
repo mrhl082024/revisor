@@ -8,7 +8,6 @@ import data from "../assets/Companies.json";
 
 function AdvancedInfo() {
   const { company, setCompany } = useContext(Context);
-  const [loadingGraph, setLoadingGraph] = useState(true);
   const [value, setValue] = useState();
 
   const arr = [];
@@ -20,7 +19,16 @@ function AdvancedInfo() {
   for (const [code, name] of Object.entries(rangeData)) {
     keyValueArr.push({ code, name });
   }
-  console.log();
+  console.log(company.FiscData.filter((data) => data.Code === value));
+  const chartData = company.FiscData.filter((data) => data.Code === value);
+  console.log(
+    chartData.map((data) => {
+      return {
+        x: data.Year,
+        y: data.Value,
+      };
+    })
+  );
 
   return (
     <>
@@ -43,16 +51,17 @@ function AdvancedInfo() {
       </select>
       <Chart
         data={{
-          labels: company.FiscData.filter(
-            (name) => name.Code === value && name.Year
-          ),
+          label: "test",
           datasets: [
             {
               type: "line",
-              label: "year",
-              data: company.FiscData.filter(
-                (data) => data.Code === value && data.Value
-              ),
+              label: "Value",
+              data: chartData.map((data) => {
+                return {
+                  x: String(data.Year),
+                  y: data.Value,
+                };
+              }),
             },
           ],
         }}
