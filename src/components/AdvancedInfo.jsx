@@ -5,6 +5,7 @@ function AdvancedInfo() {
   const { company, setCompany } = useContext(Context);
   const [showBoardMembers, setShowBoardMembers] = useState(false);
   const [showIndustryCodes, setShowIndustryCodes] = useState(false);
+  const [showTaxReg, setShowTaxReg] = useState(false);
 
   console.log(company);
 
@@ -54,6 +55,27 @@ function AdvancedInfo() {
                     </li>
                   </div>
                 ))}
+              </ul>
+            ) : (
+              false
+            )}
+          </section>
+          <section>
+            <button
+              onClick={() => {
+                setShowTaxReg((e) => !e);
+              }}
+            >
+              TaxReg:
+            </button>
+            {showTaxReg ? (
+              <ul>
+                <li>Last Audit Year: {data.TaxReg.LastAuditYear} </li>
+                <li>Need Audit: {data.TaxReg.NeedAudit ? "True" : "False"} </li>
+                <li>TaxReg ID: {data.TaxReg.TaxRegID} </li>
+                <li>
+                  Vat Registered: {data.TaxReg.VatRegistered ? "True" : "False"}{" "}
+                </li>
               </ul>
             ) : (
               false
