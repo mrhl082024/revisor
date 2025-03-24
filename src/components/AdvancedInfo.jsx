@@ -8,8 +8,13 @@ function AdvancedInfo() {
 
   return (
     <>
-      <p>{company.FiscData[0].Code} </p>
+      {company.map((data, id) => (
+        <div>
+          {data.FiscData.map((entry)=> <div>
+            <div/>)}
+        </div>
+      ))}
     </>
-  );
+  )
 }
 export default AdvancedInfo;
