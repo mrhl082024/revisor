@@ -8,7 +8,6 @@ import companies from "../assets/Companies.json";
 
 const CompanyList = () => {
   const { company, setCompany } = useContext(Context);
-  console.log(company);
 
   const navigate = useNavigate();
   return (

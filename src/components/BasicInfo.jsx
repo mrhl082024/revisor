@@ -8,7 +8,6 @@ const BasicInfo = () => {
   const [showBoardMembers, setShowBoardMembers] = useState(false);
   const [showIndustryCodes, setShowIndustryCodes] = useState(false);
   const [showTaxReg, setShowTaxReg] = useState(false);
-  console.log(company);
 
   return (
     <>
