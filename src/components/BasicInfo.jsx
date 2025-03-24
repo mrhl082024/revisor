@@ -17,6 +17,7 @@ const BasicInfo = () => {
                   <li>Company ID: {data.CompanyID}</li>
                   <li>Org.nr: {data.OrganisationNumber}</li>
                   <li>Current Employees: {data.CurrentEmployees}</li>
+                  <li>Registered Date: {data.RegisteredDate}</li>
                 </ul>
               </section>
               <section>
