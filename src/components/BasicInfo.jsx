@@ -28,7 +28,7 @@ const BasicInfo = () => {
                     setShowAddress((e) => !e);
                   }}
                 >
-                  Show Address:
+                  Address:
                 </button>
                 {showAddress ? (
                   <ul>

@@ -4,6 +4,7 @@ import { Context } from "./ContextWindow";
 function AdvancedInfo() {
   const { company, setCompany } = useContext(Context);
   const [showBoardMembers, setShowBoardMembers] = useState(false);
+  const [showIndustryCodes, setShowIndustryCodes] = useState(false);
 
   console.log(company);
 
@@ -17,7 +18,7 @@ function AdvancedInfo() {
                 setShowBoardMembers((e) => !e);
               }}
             >
-              Show Board Members:
+              Board Members:
             </button>
             {showBoardMembers ? (
               <ul>
@@ -35,14 +36,28 @@ function AdvancedInfo() {
             )}
           </section>
           <section>
-            <ul>
-              {data.IndustryCodes.map((industryCodes, id) => (
-                <div key={id}>
-                  <li>Industry Code: {industryCodes.IndustryCode} </li>
-                  <li>Industry Code ID: {industryCodes.IndustryCodeId} </li>
-                </div>
-              ))}
-            </ul>
+            <button
+              onClick={() => {
+                setShowIndustryCodes((e) => !e);
+              }}
+            >
+              Industry Codes:
+            </button>
+            {showIndustryCodes ? (
+              <ul>
+                {data.IndustryCodes.map((industryCodes, id) => (
+                  <div key={id}>
+                    <li>Industry Code: {industryCodes.IndustryCode} </li>
+                    <li>Industry Code ID: {industryCodes.IndustryCodeId} </li>
+                    <li>
+                      Primary: {industryCodes.Primary ? "True" : "False"}{" "}
+                    </li>
+                  </div>
+                ))}
+              </ul>
+            ) : (
+              false
+            )}
           </section>
         </div>
       ))}
