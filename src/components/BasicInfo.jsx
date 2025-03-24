@@ -13,18 +13,19 @@ const BasicInfo = () => {
             <div key={id} id="basicinfo">
               <section>
                 <h1>{data.CompanyName} </h1>
-              </section>
-              <section>
                 <p>Company ID: {data.CompanyID}</p>
                 <p>Org.nr: {data.OrganisationNumber} </p>
                 <p>Current Employees: {data.CurrentEmployees} </p>
               </section>
               <section>
-                <p>{data.RegisteredAddress.City} </p>
-                <p>{data.RegisteredAddress.Country} </p>
-                <p>{data.RegisteredAddress.StreetName} </p>
-                <p>{data.RegisteredAddress.StreetNumber} </p>
-                <p>{data.RegisteredAddress.PostalCode} </p>
+                Registered Address:
+                <ul>
+                  <li>City: {data.RegisteredAddress.City} </li>
+                  <li>Country: {data.RegisteredAddress.Country} </li>
+                  <li>Street Name:{data.RegisteredAddress.StreetName} </li>
+                  <li>Street Number:{data.RegisteredAddress.StreetNumber} </li>
+                  <li>Postal Code: {data.RegisteredAddress.PostalCode} </li>
+                </ul>
               </section>
             </div>
           ))}
