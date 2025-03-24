@@ -17,7 +17,7 @@ const CompanyList = () => {
           <button
             key={id}
             onClick={() => {
-              setCompany([entry]);
+              setCompany(entry);
               navigate("/company");
             }}
           >
