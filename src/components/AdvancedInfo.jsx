@@ -10,25 +10,11 @@ function AdvancedInfo() {
   const { company, setCompany } = useContext(Context);
   const [value, setValue] = useState();
 
-  const arr = [];
-  function validArr(keyCode) {
-    validArr.length = 0;
-    data.map((data) => data.Code === code && validArr.push(data));
-  }
   const keyValueArr = [];
   for (const [code, name] of Object.entries(rangeData)) {
     keyValueArr.push({ code, name });
   }
   console.log(company.FiscData.filter((data) => data.Code === value));
-  const chartData = company.FiscData.filter((data) => data.Code === value);
-  console.log(
-    chartData.map((data) => {
-      return {
-        x: data.Year,
-        y: data.Value,
-      };
-    })
-  );
 
   return (
     <>
@@ -56,12 +42,14 @@ function AdvancedInfo() {
             {
               type: "line",
               label: "Value",
-              data: chartData.map((data) => {
-                return {
-                  x: String(data.Year),
-                  y: data.Value,
-                };
-              }),
+              data: company.FiscData.filter((data) => data.Code === value).map(
+                (data) => {
+                  return {
+                    x: String(data.Year),
+                    y: data.Value,
+                  };
+                }
+              ),
             },
           ],
         }}
