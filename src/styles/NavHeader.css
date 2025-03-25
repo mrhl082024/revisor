@@ -2,7 +2,23 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  background-color: rgb(0, 0, 0, 0.6);
+  margin: 8px;
+  border-radius: 4px;
 }
 #navheader-logo {
   width: 200px;
+  padding: 4px;
+  background-color: rgb(230, 230, 230);
+  border-radius: 4px 0 0 4px;
+  transition: 0.1s;
+}
+#navheader-logo:hover {
+  transform: scale(1.03);
+}
+#company-list-btn {
+  transition: 0.1s;
+}
+#company-list-btn:hover {
+  transform: translate(2px, 1px);
 }
