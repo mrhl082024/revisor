@@ -2,11 +2,7 @@
   font-size: 20px;
   width: fit-content;
 }
-select {
-  height: 30px;
-  width: 255px;
-  text-align: center;
-}
+
 #advanced-selects {
   display: flex;
   flex-direction: column;
