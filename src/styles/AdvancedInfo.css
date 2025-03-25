@@ -2,5 +2,6 @@
   width: fit-content;
 }
 #graph {
+  background-color: rgb(230, 230, 230);
   width: 540px;
 }

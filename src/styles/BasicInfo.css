@@ -1,5 +1,6 @@
 #basicinfo {
   font-size: 20px;
+  width: fit-content;
 }
 select {
   height: 30px;
