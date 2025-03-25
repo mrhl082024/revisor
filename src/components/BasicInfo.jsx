@@ -1,4 +1,5 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
+import { useState } from "react";
 import { Context } from "./ContextWindow";
 
 import "../styles/BasicInfo.css";
@@ -27,6 +28,7 @@ const BasicInfo = () => {
           </section>
           <section>
             <button
+              className="basic-btn"
               onClick={() => {
                 setShowAddress((e) => !e);
               }}
@@ -45,6 +47,7 @@ const BasicInfo = () => {
           </section>
           <section>
             <button
+              className="basic-btn"
               onClick={() => {
                 setShowContactInfo((e) => !e);
               }}
@@ -66,6 +69,7 @@ const BasicInfo = () => {
           </section>
           <section>
             <button
+              className="basic-btn"
               onClick={() => {
                 setShowBoardMembers((e) => !e);
               }}
@@ -87,6 +91,7 @@ const BasicInfo = () => {
           </section>
           <section>
             <button
+              className="basic-btn"
               onClick={() => {
                 setShowIndustryCodes((e) => !e);
               }}
@@ -109,6 +114,7 @@ const BasicInfo = () => {
           </section>
           <section>
             <button
+              className="basic-btn"
               onClick={() => {
                 setShowTaxReg((e) => !e);
               }}

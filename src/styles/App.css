@@ -29,6 +29,14 @@ button {
   height: 30px;
   border-radius: 4px;
   color: rgb(150, 150, 150);
+  border: 2px solid #148bda;
+}
+.basic-btn {
+  margin-bottom: 8px;
+  transition: 0.1s;
+}
+.basic-btn:hover {
+  transform: scale(1.05);
 }
 select {
   height: 30px;
