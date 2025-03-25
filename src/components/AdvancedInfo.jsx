@@ -11,16 +11,31 @@ import data from "../assets/Companies.json";
 function AdvancedInfo() {
   const { company, setCompany } = useContext(Context);
   const [value, setValue] = useState();
+  const [graphType, setGraphType] = useState("bar");
 
   const keyValueArr = [];
   for (const [code, name] of Object.entries(rangeData)) {
     keyValueArr.push({ code, name });
   }
-  console.log(company.FiscData.filter((data) => data.Code === value));
+
+  const graphTypes = ["bar", "bubble", "line"];
 
   return (
     <>
       <div id="advancedinfo">
+        <select
+          name="type"
+          id="type"
+          onChange={(e) => {
+            setGraphType(e.target.value);
+          }}
+        >
+          {graphTypes.map((graphTypes, id) => (
+            <option key={id} value={graphTypes}>
+              {graphTypes}
+            </option>
+          ))}
+        </select>
         <select
           onChange={(e) => {
             setValue(e.target.value);
@@ -37,13 +52,14 @@ function AdvancedInfo() {
             </option>
           ))}
         </select>
+
         <figure id="graph">
           <Chart
             data={{
               label: "test",
               datasets: [
                 {
-                  type: "line",
+                  type: graphType,
                   label: "Value",
                   data: company.FiscData.filter(
                     (data) => data.Code === value

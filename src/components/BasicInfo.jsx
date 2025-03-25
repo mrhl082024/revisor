@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
 import { Context } from "./ContextWindow";
 
+import "../styles/BasicInfo.css";
+
 const BasicInfo = () => {
   const { company, setCompany } = useContext(Context);
   const [showAddress, setShowAddress] = useState(false);
@@ -11,9 +13,9 @@ const BasicInfo = () => {
   console.log(company);
 
   return (
-    <>
+    <div id="basicinfo">
       {company === null || company === undefined ? null : (
-        <div id="basicinfo">
+        <div>
           <section>
             <h1>{company.CompanyName} </h1>
             <ul>
@@ -36,9 +38,7 @@ const BasicInfo = () => {
                 <li>City: {company.RegisteredAddress.City} </li>
                 <li>Country: {company.RegisteredAddress.Country} </li>
                 <li>Street Name: {company.RegisteredAddress.StreetName} </li>
-                <li>
-                  Street Number: {company.RegisteredAddress.StreetNumber}{" "}
-                </li>
+                <li>Street Number: {company.RegisteredAddress.StreetNumber}</li>
                 <li>Postal Code: {company.RegisteredAddress.PostalCode} </li>
               </ul>
             ) : (
@@ -141,7 +141,7 @@ const BasicInfo = () => {
           </section>
         </div>
       )}
-    </>
+    </div>
   );
 };
 export default BasicInfo;
