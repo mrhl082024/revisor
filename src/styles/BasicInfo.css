@@ -1,6 +1,10 @@
 #basicinfo {
   font-size: 20px;
   width: fit-content;
+  color: rgb(224, 224, 224);
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  padding: 1rem;
 }
 
 #advanced-selects {

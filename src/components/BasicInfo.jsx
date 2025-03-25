@@ -41,9 +41,7 @@ const BasicInfo = () => {
                 <li>Street Number: {company.RegisteredAddress.StreetNumber}</li>
                 <li>Postal Code: {company.RegisteredAddress.PostalCode} </li>
               </ul>
-            ) : (
-              false
-            )}
+            ) : null}
           </section>
           <section>
             <button
@@ -64,9 +62,7 @@ const BasicInfo = () => {
                   </a>
                 </li>
               </ul>
-            ) : (
-              false
-            )}
+            ) : null}
           </section>
           <section>
             <button
@@ -87,9 +83,7 @@ const BasicInfo = () => {
                   </div>
                 ))}
               </ul>
-            ) : (
-              false
-            )}
+            ) : null}
           </section>
           <section>
             <button
@@ -111,9 +105,7 @@ const BasicInfo = () => {
                   </div>
                 ))}
               </ul>
-            ) : (
-              false
-            )}
+            ) : null}
           </section>
           <section>
             <button
@@ -135,9 +127,7 @@ const BasicInfo = () => {
                   {company.TaxReg.VatRegistered ? "True" : "False"}{" "}
                 </li>
               </ul>
-            ) : (
-              false
-            )}
+            ) : null}
           </section>
         </div>
       )}
