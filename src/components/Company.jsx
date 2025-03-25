@@ -1,10 +1,14 @@
 import BasicInfo from "./BasicInfo.jsx";
 import AdvancedInfo from "./AdvancedInfo.jsx";
+
+import "../styles/Company.css";
 function Company() {
   return (
     <>
-      <BasicInfo />
-      <AdvancedInfo />
+      <div id="company">
+        <BasicInfo />
+        <AdvancedInfo />
+      </div>
     </>
   );
 }

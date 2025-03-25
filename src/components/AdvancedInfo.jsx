@@ -3,6 +3,8 @@ import { Context } from "./ContextWindow";
 import { Bar, Chart } from "react-chartjs-2";
 import * as ChartJS from "chart.js/auto";
 
+import "../styles/AdvancedInfo.css";
+
 import rangeData from "../assets/NS4102Range.json";
 import data from "../assets/Companies.json";
 
@@ -18,43 +20,45 @@ function AdvancedInfo() {
 
   return (
     <>
-      <select
-        onChange={(e) => {
-          setValue(e.target.value);
-        }}
-        name="code"
-        id="code"
-      >
-        <option selected="selected" disabled hidden>
-          Choose code
-        </option>
-
-        {keyValueArr.map((entry, id) => (
-          <option key={id} value={entry.code}>
-            {entry.name}
+      <div id="advancedinfo">
+        <select
+          onChange={(e) => {
+            setValue(e.target.value);
+          }}
+          name="code"
+          id="code"
+        >
+          <option selected="selected" disabled hidden>
+            Choose code
           </option>
-        ))}
-      </select>
-
-      <Chart
-        data={{
-          label: "test",
-          datasets: [
-            {
-              type: "line",
-              label: "Value",
-              data: company.FiscData.filter((data) => data.Code === value).map(
-                (data) => {
-                  return {
-                    x: String(data.Year),
-                    y: data.Value,
-                  };
-                }
-              ),
-            },
-          ],
-        }}
-      />
+          {keyValueArr.map((entry, id) => (
+            <option key={id} value={entry.code}>
+              {entry.name}
+            </option>
+          ))}
+        </select>
+        <figure id="graph">
+          <Chart
+            data={{
+              label: "test",
+              datasets: [
+                {
+                  type: "line",
+                  label: "Value",
+                  data: company.FiscData.filter(
+                    (data) => data.Code === value
+                  ).map((data) => {
+                    return {
+                      x: String(data.Year),
+                      y: data.Value,
+                    };
+                  }),
+                },
+              ],
+            }}
+          />
+        </figure>
+      </div>
     </>
   );
 }
