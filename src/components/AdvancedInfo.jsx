@@ -23,35 +23,37 @@ function AdvancedInfo() {
   return (
     <>
       <div id="advancedinfo">
-        <select
-          name="type"
-          id="type"
-          onChange={(e) => {
-            setGraphType(e.target.value);
-          }}
-        >
-          {graphTypes.map((graphTypes, id) => (
-            <option key={id} value={graphTypes}>
-              {graphTypes}
+        <section id="advanced-selects">
+          <select
+            name="type"
+            id="type"
+            onChange={(e) => {
+              setGraphType(e.target.value);
+            }}
+          >
+            {graphTypes.map((graphTypes, id) => (
+              <option key={id} value={graphTypes}>
+                {graphTypes}
+              </option>
+            ))}
+          </select>
+          <select
+            onChange={(e) => {
+              setValue(e.target.value);
+            }}
+            name="code"
+            id="code"
+          >
+            <option selected="selected" disabled hidden>
+              Choose code
             </option>
-          ))}
-        </select>
-        <select
-          onChange={(e) => {
-            setValue(e.target.value);
-          }}
-          name="code"
-          id="code"
-        >
-          <option selected="selected" disabled hidden>
-            Choose code
-          </option>
-          {keyValueArr.map((entry, id) => (
-            <option key={id} value={entry.code}>
-              {entry.name}
-            </option>
-          ))}
-        </select>
+            {keyValueArr.map((entry, id) => (
+              <option key={id} value={entry.code}>
+                {entry.name}
+              </option>
+            ))}
+          </select>
+        </section>
 
         <figure id="graph">
           <Chart
