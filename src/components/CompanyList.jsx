@@ -15,6 +15,7 @@ const CompanyList = () => {
       <div id="company-list">
         {companies.map((entry, id) => (
           <button
+            className="company-btn"
             key={id}
             onClick={() => {
               setCompany(entry);

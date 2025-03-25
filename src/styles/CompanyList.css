@@ -3,3 +3,6 @@
   flex-direction: column;
   gap: 6px;
 }
+.company-btn {
+  width: 300px;
+}
