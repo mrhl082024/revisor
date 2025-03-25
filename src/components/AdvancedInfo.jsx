@@ -35,6 +35,7 @@ function AdvancedInfo() {
           </option>
         ))}
       </select>
+
       <Chart
         data={{
           label: "test",
@@ -57,4 +58,5 @@ function AdvancedInfo() {
     </>
   );
 }
+//Just a reminder that without my Furfag<3 this project wouldn't exist.
 export default AdvancedInfo;
