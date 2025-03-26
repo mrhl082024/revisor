@@ -91,8 +91,10 @@ function AdvancedInfo() {
               labels: shareholderNames,
               datasets: [
                 {
+                  label: "test",
                   type: "doughnut",
                   data: shareholderValues,
+                  hoverOffset: 4,
                 },
               ],
             }}
