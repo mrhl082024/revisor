@@ -13,12 +13,14 @@ function AdvancedInfo() {
   const [value, setValue] = useState();
   const [graphType, setGraphType] = useState("bar");
 
+  const graphTypes = ["bar", "bubble", "line"];
+
   const keyValueArr = [];
   for (const [code, name] of Object.entries(rangeData)) {
     keyValueArr.push({ code, name });
   }
 
-  const graphTypes = ["bar", "bubble", "line"];
+  console.log(company);
 
   return (
     <>

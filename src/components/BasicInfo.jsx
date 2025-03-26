@@ -11,7 +11,7 @@ const BasicInfo = () => {
   const [showBoardMembers, setShowBoardMembers] = useState(false);
   const [showIndustryCodes, setShowIndustryCodes] = useState(false);
   const [showTaxReg, setShowTaxReg] = useState(false);
-  console.log(company);
+  const [showShareholders, setShowShareholders] = useState(false);
 
   return (
     <div id="basicinfo">
@@ -134,6 +134,27 @@ const BasicInfo = () => {
                 </li>
               </ul>
             ) : null}
+          </section>
+          <section>
+            <button
+              className="basic-btn"
+              onClick={() => {
+                setShowShareholders((e) => !e);
+              }}
+            >
+              Shareholders:
+            </button>
+            {showShareholders
+              ? company.OwnerShareholders.map((data, id) => (
+                  <ul key={id}>
+                    Name: {data.Name}
+                    <li>Role: {data.Role} </li>
+                    <li>Org.nr: {data.OrganisationNumber} </li>
+                    <li>Shareholder ID: {data.OwnerShareholderId} </li>
+                    <li>Share Percentage: {data.SharePercentage.toFixed(2)}</li>
+                  </ul>
+                ))
+              : null}
           </section>
         </div>
       )}
