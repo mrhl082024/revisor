@@ -15,6 +15,15 @@ function AdvancedInfo() {
 
   const graphTypes = ["bar", "bubble", "line"];
 
+  const shareholderValues = [];
+  company.OwnerShareholders.map((data) =>
+    shareholderValues.push(data.SharePercentage)
+  );
+
+  const shareholderNames = [];
+  company.OwnerShareholders.map((name) => shareholderNames.push(name.Name));
+  console.log(shareholderNames);
+
   const keyValueArr = [];
   for (const [code, name] of Object.entries(rangeData)) {
     keyValueArr.push({ code, name });
@@ -56,11 +65,9 @@ function AdvancedInfo() {
             ))}
           </select>
         </section>
-
         <figure id="graph">
           <Chart
             data={{
-              label: "test",
               datasets: [
                 {
                   type: graphType,
@@ -73,6 +80,19 @@ function AdvancedInfo() {
                       y: data.Value,
                     };
                   }),
+                },
+              ],
+            }}
+          />
+        </figure>
+        <figure id="shareholder-graph">
+          <Chart
+            data={{
+              labels: shareholderNames,
+              datasets: [
+                {
+                  type: "doughnut",
+                  data: shareholderValues,
                 },
               ],
             }}
