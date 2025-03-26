@@ -88,7 +88,7 @@ function AdvancedInfo() {
         <figure id="shareholder-graph">
           <Chart
             data={{
-              labels: shareholderNames,
+              labels: ["test", "test2", "test3"],
               datasets: [
                 {
                   label: "test",
