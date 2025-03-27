@@ -1,9 +1,15 @@
 import genericLogo from "/images/generic-logo.png";
 import "../styles/NavHeader.css";
 import { useNavigate } from "react-router-dom";
+import data from "../assets/Companies.json";
+import { useContext } from "react";
+import { Context } from "./ContextWindow";
 
 function NavHeader() {
   const navigate = useNavigate();
+  const { company, setCompany } = useContext(Context);
+  console.log(data);
+
   return (
     <>
       <nav id="nav">
