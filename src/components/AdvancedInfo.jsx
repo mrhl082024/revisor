@@ -1,12 +1,15 @@
 import { useContext, useState } from "react";
 import { Context } from "./ContextWindow";
-import { Bar, Chart } from "react-chartjs-2";
+import { Bar, Doughnut } from "react-chartjs-2";
 import * as ChartJS from "chart.js/auto";
+import { Chart as ChartJs, ArcElement, Tooltip, Legend } from "chart.js";
 
 import "../styles/AdvancedInfo.css";
 
 import rangeData from "../assets/NS4102Range.json";
 import data from "../assets/Companies.json";
+
+ChartJs.register(ArcElement, Tooltip, Legend);
 
 function AdvancedInfo() {
   const { company, setCompany } = useContext(Context);
@@ -66,7 +69,7 @@ function AdvancedInfo() {
           </select>
         </section>
         <figure id="graph">
-          <Chart
+          <Bar
             data={{
               datasets: [
                 {
@@ -86,18 +89,21 @@ function AdvancedInfo() {
           />
         </figure>
         <figure id="shareholder-graph">
-          <Chart
+          <Doughnut
             data={{
-              labels: ["test", "test2", "test3"],
+              labels: company.OwnerShareholders.map((name) => name.Name),
               datasets: [
                 {
-                  label: "test",
+                  label: "Shareholder Percentage",
                   type: "doughnut",
-                  data: shareholderValues,
+                  data: company.OwnerShareholders.map(
+                    (shareholder) => shareholder.SharePercentage
+                  ),
                   hoverOffset: 4,
                 },
               ],
             }}
+            options={{}}
           />
         </figure>
       </div>
