@@ -1,5 +1,6 @@
 import BasicInfo from "./BasicInfo.jsx";
 import AdvancedInfo from "./AdvancedInfo.jsx";
+import Footer from "./Footer.jsx";
 
 import "../styles/Company.css";
 function Company() {
@@ -9,6 +10,7 @@ function Company() {
         <BasicInfo />
         <AdvancedInfo />
       </div>
+      <Footer />
     </>
   );
 }

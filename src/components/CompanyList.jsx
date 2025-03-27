@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Context } from "./ContextWindow.jsx";
 import { useNavigate } from "react-router-dom";
+import Footer from "./Footer.jsx";
 
 import "../styles/CompanyList.css";
 
@@ -26,6 +27,7 @@ const CompanyList = () => {
           </button>
         ))}
       </div>
+      <Footer />
     </>
   );
 };

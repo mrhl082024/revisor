@@ -18,9 +18,6 @@ function App() {
           <Route path="/companylist" element={<CompanyList />} />
           <Route path="/company" element={<Company />} />
         </Routes>
-        <footer>
-          <Footer />
-        </footer>
       </BrowserRouter>
     </>
   );
