@@ -1,0 +1,9 @@
+#footer {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: relative;
+  height: 160px;
+}
+#git-logo {
+  width: 40px;
+  height: 40px;
+}

@@ -4,6 +4,7 @@ import Header from "./components/Header.jsx";
 import Homepage from "./components/Homepage.jsx";
 import CompanyList from "./components/CompanyList.jsx";
 import Company from "./components/Company.jsx";
+import Footer from "./components/Footer.jsx";
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
           <Route path="/companylist" element={<CompanyList />} />
           <Route path="/company" element={<Company />} />
         </Routes>
+        <footer>
+          <Footer />
+        </footer>
       </BrowserRouter>
     </>
   );
