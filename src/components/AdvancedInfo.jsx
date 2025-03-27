@@ -89,7 +89,6 @@ function AdvancedInfo() {
           />
         </figure>
         <figure id="shareholder-graph">
-          Shareholders
           <Doughnut
             data={{
               labels: company.OwnerShareholders.map((name) => name.Name),
