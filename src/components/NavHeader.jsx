@@ -36,7 +36,7 @@ function NavHeader() {
         <input
           id="company-search"
           type="text"
-          placeholder="search for name or org.nr"
+          placeholder="search for Company Name"
           value={query}
           onChange={(e) => {
             setQuery(e.target.value.toLowerCase());
