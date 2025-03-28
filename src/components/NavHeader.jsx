@@ -11,7 +11,6 @@ function NavHeader() {
   const { company, setCompany } = useContext(Context);
   const [query, setQuery] = useState("");
   const [filteredData, setFilteredData] = useState();
-  console.log(data);
 
   function searchfield(query) {
     return data.filter((obj) => obj.CompanyName.toLowerCase().includes(query));

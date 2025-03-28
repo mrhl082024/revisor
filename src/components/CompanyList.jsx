@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Context } from "./ContextWindow.jsx";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer.jsx";
@@ -10,17 +10,37 @@ import companies from "../assets/Companies.json";
 const CompanyList = () => {
   const { company, setCompany } = useContext(Context);
   const [pageCounter, setPageCounter] = useState(1);
+  const [lowCounter, setLowCounter] = useState(0);
+  const [highCounter, setHighCounter] = useState(10);
+  const [listedCompanies, setListedCompanies] = useState([]);
+  console.log(listedCompanies);
 
   function pageDecrement() {
     if (pageCounter <= 1) {
       setPageCounter(1);
+      setLowCounter(0);
+      setHighCounter(10);
     } else {
+      setLowCounter((prev) => prev - 10);
+      setHighCounter((prev) => prev - 10);
       setPageCounter((prev) => prev - 1);
     }
   }
   function pageIncrement() {
-    setPageCounter((prev) => prev + 1);
+    if (pageCounter >= 30) {
+      setPageCounter(30);
+    } else {
+      setPageCounter((prev) => prev + 1);
+      setLowCounter((prev) => prev + 10);
+      setHighCounter((prev) => prev + 10);
+    }
   }
+  useEffect(() => {
+    setListedCompanies(companies.slice(0, 10));
+  }, []);
+  useEffect(() => {
+    setListedCompanies(companies.slice(lowCounter, highCounter));
+  }, [lowCounter]);
 
   const navigate = useNavigate();
   return (
@@ -33,11 +53,11 @@ const CompanyList = () => {
         >
           Prev Page
         </button>
-        <p>{pageCounter} </p>
+        <p id="page-counter">{pageCounter} </p>
         <button onClick={pageIncrement}>Next page</button>
       </section>
       <div id="company-list">
-        {companies.map((entry, id) => (
+        {listedCompanies.map((entry, id) => (
           <button
             className="company-btn"
             key={id}
